@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <section className="min-h-screen py-20">
+    <section id= "about" className="min-h-screen py-20">
       <div className="flex w-full h-full gap-16 max-w-7xl mx-auto px-5">
         {/* Video Column */}
         <div className="flex-1 overflow-hidden">

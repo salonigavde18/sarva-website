@@ -18,7 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Sarva | Wellness & Spa",
+  title: "Sarva | Clothing brand",
   description: "Experience tranquility and rejuvenation at Sarva",
 };
 

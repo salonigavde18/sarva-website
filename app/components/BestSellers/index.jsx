@@ -1,12 +1,39 @@
-import React from "react";
+"use client"
+import { useRouter } from "next/navigation";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const BestSellers = () => {
+  const router  = useRouter();
+  const right = useRef(null);
+
+  useEffect(()=>{
+    if (typeof window !== "undefined"){
+      gsap.fromTo(right.current, {
+        x: 200,
+        opacity: 0,
+        delay: 1,
+        duration: 1,
+        ScrollTrigger:{
+
+        }
+
+ 
+     })
+
+    }
+    
+  })
+
   const products = [
     {
       id: 1,
       name: "Short puffer jacket",
       price: "$99.99",
-      imageUrl: "https://image.hm.com/assets/hm/97/11/97115dfacea29db0bf92a7a100ae641619c2dcc6.jpg?imwidth=336",
+      imageUrl: "https://lp2.hm.com/hmgoepprod?set=source[/d4/d3/d4d324bc00bbcfd0f840c6f3d404aba5b415430e.jpg],origin[dam],category[ladies_jacketscoats_jackets],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]",
     },
     {
       id: 2,
@@ -28,6 +55,10 @@ const BestSellers = () => {
     },
   ];
 
+  const handleNavigation = (productId) => {
+    router.push(`/bestsellers/${productId}`);
+  }
+
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-8">
@@ -35,7 +66,7 @@ const BestSellers = () => {
           {/* Left Column - Product Grid */}
           <div className="grid grid-cols-2 gap-8">
             {products.map((product) => (
-              <div key={product.id} className="group cursor-pointer">
+              <div key={product.id} className="group cursor-pointer" onClick={()=> handleNavigation(product.id)} >
                 <div className="overflow-hidden mb-4">
                   <img
                     className="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-110"
@@ -50,7 +81,7 @@ const BestSellers = () => {
           </div>
 
           {/* Right Column - Content */}
-          <div className="relative h-full">
+          <div  ref={right} className="relative h-full">
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
@@ -62,7 +93,9 @@ const BestSellers = () => {
               <p className="text-xl mb-8 max-w-md">
                 Discover our most loved pieces that define style and comfort.
               </p>
-              <button className="text-sm font-light border border-white px-8 py-3 hover:bg-white hover:text-black transition-colors">
+              <button onClick={()=>{
+                router.push('/collections')
+              }} className="text-sm font-light border border-white px-8 py-3 hover:bg-white hover:text-black transition-colors">
                 Shop Collection
               </button>
             </div>

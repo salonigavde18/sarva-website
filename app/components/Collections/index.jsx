@@ -6,7 +6,7 @@ export default function Collections() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-[#fafafa] p-8">
-            <h3 className="text-xl font-light mb-4">Summer 2024</h3>
+            <h3 className="text-xl font-light mb-4">Winter 2024</h3>
             <p className="text-gray-600 mb-6">Light, breezy pieces for the warmer days</p>
             <button className="bg-black text-white px-6 py-3 hover:bg-gray-800">Shop Now</button>
           </div>

@@ -26,13 +26,7 @@ const Hero = () => {
         </p>
         <div className="flex gap-6 justify-center">
           <a
-            href="/collections"
-            className="bg-white text-charcoal px-8 py-3 text-lg hover:bg-sand-light transition-colors duration-300"
-          >
-            Shop Now
-          </a>
-          <a
-            href="/about"
+            href="#about"
             className="border border-white px-8 py-3 text-lg hover:bg-white/10 transition-colors duration-300"
           >
             Learn More
