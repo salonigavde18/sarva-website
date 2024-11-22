@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
@@ -7,57 +7,61 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const BestSellers = () => {
-  const router  = useRouter();
+  const router = useRouter();
   const right = useRef(null);
 
-  useEffect(()=>{
-    if (typeof window !== "undefined"){
-      gsap.fromTo(right.current, {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      gsap.from(right.current, {
         x: 200,
         opacity: 0,
         delay: 1,
         duration: 1,
-        ScrollTrigger:{
-
-        }
-
- 
-     })
-
+        ScrollTrigger: {
+          trigger: right.current,
+          start: "top center",
+          end: "bottom center",
+          toggleActions: "play none none reverse",
+          scrub: 0.5,
+        },
+      });
     }
-    
-  })
+  });
 
   const products = [
     {
       id: 1,
       name: "Short puffer jacket",
       price: "$99.99",
-      imageUrl: "https://lp2.hm.com/hmgoepprod?set=source[/d4/d3/d4d324bc00bbcfd0f840c6f3d404aba5b415430e.jpg],origin[dam],category[ladies_jacketscoats_jackets],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]",
+      imageUrl:
+        "https://lp2.hm.com/hmgoepprod?set=source[/d4/d3/d4d324bc00bbcfd0f840c6f3d404aba5b415430e.jpg],origin[dam],category[ladies_jacketscoats_jackets],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]",
     },
     {
       id: 2,
       name: "Button detail sweatshirt",
       price: "$49.99",
-      imageUrl: "https://lp2.hm.com/hmgoepprod?set=source[/ed/ad/edad185e15082855bb3941cf1c92e6ba79894d43.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]",
+      imageUrl:
+        "https://lp2.hm.com/hmgoepprod?set=source[/ed/ad/edad185e15082855bb3941cf1c92e6ba79894d43.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]",
     },
     {
       id: 3,
       name: "Oversized fleece hoodie",
       price: "$79.99",
-      imageUrl: "https://lp2.hm.com/hmgoepprod?set=source[/0b/fe/0bfe0dd5139e48f42549b226578956b2d230dbe8.jpg],origin[dam],category[ladies_hoodiesswetshirts_hoodies],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]",
+      imageUrl:
+        "https://lp2.hm.com/hmgoepprod?set=source[/0b/fe/0bfe0dd5139e48f42549b226578956b2d230dbe8.jpg],origin[dam],category[ladies_hoodiesswetshirts_hoodies],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]",
     },
     {
       id: 4,
       name: "Fringe-trimmed poncho",
       price: "$129.99",
-      imageUrl: "https://lp2.hm.com/hmgoepprod?set=source[/17/58/1758370dbeb3197f8781d04413d8352aa8cf9241.jpg],origin[dam],category[ladies_accessories_sarongsponchos],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]",
+      imageUrl:
+        "https://lp2.hm.com/hmgoepprod?set=source[/17/58/1758370dbeb3197f8781d04413d8352aa8cf9241.jpg],origin[dam],category[ladies_accessories_sarongsponchos],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]",
     },
   ];
 
   const handleNavigation = (productId) => {
     router.push(`/bestsellers/${productId}`);
-  }
+  };
 
   return (
     <section className="py-20 bg-white">
@@ -66,7 +70,11 @@ const BestSellers = () => {
           {/* Left Column - Product Grid */}
           <div className="grid grid-cols-2 gap-8">
             {products.map((product) => (
-              <div key={product.id} className="group cursor-pointer" onClick={()=> handleNavigation(product.id)} >
+              <div
+                key={product.id}
+                className="group cursor-pointer"
+                onClick={() => handleNavigation(product.id)}
+              >
                 <div className="overflow-hidden mb-4">
                   <img
                     className="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-110"
@@ -81,7 +89,7 @@ const BestSellers = () => {
           </div>
 
           {/* Right Column - Content */}
-          <div  ref={right} className="relative h-full">
+          <div ref={right} className="relative h-full">
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
@@ -93,9 +101,12 @@ const BestSellers = () => {
               <p className="text-xl mb-8 max-w-md">
                 Discover our most loved pieces that define style and comfort.
               </p>
-              <button onClick={()=>{
-                router.push('/collections')
-              }} className="text-sm font-light border border-white px-8 py-3 hover:bg-white hover:text-black transition-colors">
+              <button
+                onClick={() => {
+                  router.push("/collections");
+                }}
+                className="text-sm font-light border border-white px-8 py-3 hover:bg-white hover:text-black transition-colors"
+              >
                 Shop Collection
               </button>
             </div>
@@ -105,6 +116,5 @@ const BestSellers = () => {
     </section>
   );
 };
-
 
 export default BestSellers;

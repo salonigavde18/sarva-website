@@ -22,7 +22,6 @@ const FeaturedProducts = () => {
             end: "bottom bottom",
             scrub: 0.5,
             pin: false,
-            markers: true,
           },
         }
       );
