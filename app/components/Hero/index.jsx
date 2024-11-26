@@ -1,23 +1,39 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center text-white pt-[80px] px-4 md:px-8 lg:px-12">
-      {/* Background Video */}
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        src="/hero-video.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      ></video>
+    <section className="relative h-screen flex items-center justify-center text-white pt-[80px] px-4 md:px-8 lg:px-12 overflow-hidden">
+      {/* Background Video with Animation */}
+      <motion.div
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        transition={{ 
+          duration: 1.2,
+          ease: [0.6, 0.01, -0.05, 0.9]
+        }}
+        className="absolute top-0 left-0 w-full h-full"
+      >
+        <video
+          className="w-full h-full object-cover"
+          src="/hero-video.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        ></video>
+      </motion.div>
 
       {/* Overlay with gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="relative z-10 text-center max-w-4xl mx-auto px-6"
+      >
         <h1 className="text-6xl md:text-7xl font-light mb-6 tracking-wider">
           Elevate Your Style
         </h1>
@@ -32,7 +48,7 @@ const Hero = () => {
             Learn More
           </a>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

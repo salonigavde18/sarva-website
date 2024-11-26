@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #F5F1EA;
+  --background: #F6F7F9;
   --foreground: #2C2C2C;
 }
 
 body {
-  @apply bg-sand-light text-charcoal;
+  @apply bg-[#fafafa] text-charcoal;
 }
 
 h1 {

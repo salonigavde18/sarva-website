@@ -31,28 +31,28 @@ const FeaturedProducts = () => {
   const products = [
     {
       id: 1,
-      name: "Winter Collection",
+
       category: "New Season",
       image:
         "https://image.hm.com/content/dam/global_campaigns/season_00/ladies/6000/6000-1x1-2-holiday-2024-women.jpg?imwidth=1260",
     },
     {
       id: 2,
-      name: "Evening Elegance",
+
       category: "Limited Edition",
       image:
         "https://image.hm.com/content/dam/global_campaigns/season_00/ladies/ws60aa/WS60AA-1x1-1-2.jpg?imwidth=1260",
     },
     {
       id: 3,
-      name: "Summer Breeze",
+
       category: "Exclusive",
       image:
         "https://image.hm.com/content/dam/global_campaigns/season_00/ladies/ws60a/WS60A-1x1.jpg?imwidth=1260",
     },
     {
       id: 4,
-      name: "Urban Chic",
+
       category: "Trending Now",
       image:
         "https://image.hm.com/ffc/share/assets/2024/6000/6000_15.png?imwidth=1080",

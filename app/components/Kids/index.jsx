@@ -8,19 +8,19 @@ export default function Kids() {
             <div className="bg-[#fafafa] p-6">
               <h3 className="text-xl font-light mb-4">Girls</h3>
               <p className="text-gray-600 mb-6">Playful and practical styles</p>
-              <button className="bg-black text-white px-6 py-3 hover:bg-gray-800">Shop Girls</button>
+              <button className="bg-[#9CB8E2] text-white px-6 py-3 hover:bg-gray-800">Shop Girls</button>
             </div>
   
             <div className="bg-[#fafafa] p-6">
               <h3 className="text-xl font-light mb-4">Boys</h3>
               <p className="text-gray-600 mb-6">Comfortable and durable clothing</p>
-              <button className="bg-black text-white px-6 py-3 hover:bg-gray-800">Shop Boys</button>
+              <button className="bg-[#9CB8E2] text-white px-6 py-3 hover:bg-gray-800">Shop Boys</button>
             </div>
   
             <div className="bg-[#fafafa] p-6">
               <h3 className="text-xl font-light mb-4">Accessories</h3>
               <p className="text-gray-600 mb-6">Fun additions to any outfit</p>
-              <button className="bg-black text-white px-6 py-3 hover:bg-gray-800">Shop Accessories</button>
+              <button className="bg-[#9CB8E2] text-white px-6 py-3 hover:bg-gray-800">Shop Accessories</button>
             </div>
           </div>
         </div>
